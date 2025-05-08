@@ -144,4 +144,8 @@ contract RebaseTokenTest is Test {
         vm.warp(block.timestamp + 1 hours);
         assertEq(rebaseToken.principleBalanceOf(user), amount);
     }
+
+    function testGetRebaseTokenAddress() public view {
+        assertEq(vault.getRebaseTokenAddress(), address(rebaseToken));
+    }
 }
